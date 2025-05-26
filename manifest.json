@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Ticket Supporter",
-  "version": "2.8",
+  "version": "2.9",
   "description": "예매시간 설정하고 직링을 통해 빠르게 좌석선택화면 접속하기!",
   "permissions": ["storage", "alarms", "scripting", "tabs"],
   "action": {
