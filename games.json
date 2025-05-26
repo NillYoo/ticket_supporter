@@ -1,0 +1,98 @@
+{
+  "lg": [
+    {
+      "name": "vs 한화 5월 27일 (화)",
+      "url": "https://facility.ticketlink.co.kr/reserve/product/54833?scheduleId=204628209"
+    },
+    {
+      "name": "vs 한화 5월 28일 (수)",
+      "url": "https://facility.ticketlink.co.kr/reserve/product/54833?scheduleId=204628210"
+    },
+    {
+      "name": "vs 삼성 6월 4일 (화)",
+      "url": "https://facility.ticketlink.co.kr/reserve/product/54833?scheduleId=204628217"
+    },
+    {
+      "name": "vs 삼성 6월 5일 (수)",
+      "url": "https://facility.ticketlink.co.kr/reserve/product/54833?scheduleId=204628218"
+    },
+    {
+      "name": "vs 삼성 6월 6일 (목)",
+      "url": "https://facility.ticketlink.co.kr/reserve/product/54833?scheduleId=204628219"
+    },
+    {
+      "name": "vs SSG 6월 7일 (금)",
+      "url": "https://facility.ticketlink.co.kr/reserve/product/54833?scheduleId=234096206"
+    },
+    {
+      "name": "vs SSG 6월 8일 (토)",
+      "url": "https://facility.ticketlink.co.kr/reserve/product/54833?scheduleId=234096207"
+    },
+    {
+      "name": "vs SSG 6월 9일 (일)",
+      "url": "https://facility.ticketlink.co.kr/reserve/product/54833?scheduleId=234096208"
+    },
+    {
+      "name": "vs NC 6월 18일 (화)",
+      "url": "https://facility.ticketlink.co.kr/reserve/product/54833?scheduleId=234096209"
+    },
+    {
+      "name": "vs NC 6월 19일 (수)",
+      "url": "https://facility.ticketlink.co.kr/reserve/product/54833?scheduleId=234096210"
+    },
+    {
+      "name": "vs NC 6월 20일 (목)",
+      "url": "https://facility.ticketlink.co.kr/reserve/product/54833?scheduleId=234096211"
+    },
+    {
+      "name": "vs 두산 6월 21일 (금)",
+      "url": "https://facility.ticketlink.co.kr/reserve/product/54833?scheduleId=234096212"
+    },
+    {
+      "name": "vs 두산 6월 22일 (토)",
+      "url": "https://facility.ticketlink.co.kr/reserve/product/54833?scheduleId=234096213"
+    },
+    {
+      "name": "vs 두산 6월 23일 (일)",
+      "url": "https://facility.ticketlink.co.kr/reserve/product/54833?scheduleId=234096214"
+    }
+  ],
+  "hanwha": [
+    {
+      "name": "vs KT 6월 03일 (화)",
+      "url": "https://ticketlink.co.kr/reserve/product/55319?scheduleId=1937103024"
+    },
+    {
+      "name": "vs KT 6월 04일 (수)",
+      "url": "https://ticketlink.co.kr/reserve/product/55319?scheduleId=1937103025"
+    },
+    {
+      "name": "vs KT 6월 05일 (목)",
+      "url": "https://ticketlink.co.kr/reserve/product/55319?scheduleId=1937103026"
+    },
+    {
+      "name": "vs LG 6월 11일 (화)",
+      "url": "https://ticketlink.co.kr/reserve/product/55319?scheduleId=1937103027"
+    },
+    {
+      "name": "vs LG 6월 12일 (수)",
+      "url": "https://ticketlink.co.kr/reserve/product/55319?scheduleId=1937103028"
+    },
+    {
+      "name": "vs LG 6월 13일 (목)",
+      "url": "https://ticketlink.co.kr/reserve/product/55319?scheduleId=1937103029"
+    },
+    {
+      "name": "vs 두산 6월 14일 (금)",
+      "url": "https://ticketlink.co.kr/reserve/product/55319?scheduleId=1937103030"
+    },
+    {
+      "name": "vs 두산 6월 15일 (토)",
+      "url": "https://ticketlink.co.kr/reserve/product/55319?scheduleId=1937103031"
+    },
+    {
+      "name": "vs 두산 6월 16일 (일)",
+      "url": "https://ticketlink.co.kr/reserve/product/55319?scheduleId=1937103032"
+    }
+  ]
+}
