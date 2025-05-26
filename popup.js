@@ -123,7 +123,7 @@ function updateCountdown(targetTime) {
 }
 
 // 외부 JSON에서 경기 정보를 불러옵니다
-fetch("https://cdn.jsdelivr.net/gh/NillYoo/ticket_supporter/games.json" + Date.now())  // 💡 캐시 우회
+fetch("https://cdn.jsdelivr.net/gh/NillYoo/ticket_supporter/games.json?nocache=" + Date.now())
   .then(res => res.json())
   .then(gameData => {
     chrome.storage.local.get(["reservedURL", "reservedTeam", "reservedName", "reservedTime"], data => {
@@ -138,3 +138,4 @@ fetch("https://cdn.jsdelivr.net/gh/NillYoo/ticket_supporter/games.json" + Date.n
     console.error("게임 정보를 불러올 수 없습니다.", err);
     alert("게임 정보를 불러오는 데 실패했습니다.");
   });
+
