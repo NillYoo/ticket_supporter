@@ -123,7 +123,7 @@ function updateCountdown(targetTime) {
 }
 
 // 외부 JSON에서 경기 정보를 불러옵니다
-fetch("https://ticketsupporter.netlify.app/games.json")
+fetch("https://cdn.jsdelivr.net/gh/NillYoo/ticket_supporter/games.json")
   .then(res => res.json())
   .then(gameData => {
     chrome.storage.local.get(["reservedURL", "reservedTeam", "reservedName", "reservedTime"], data => {
