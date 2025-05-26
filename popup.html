@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Ticket Supporter</title>
+  <style>
+    html, body {
+      margin: 0; padding: 0; width: 100%; height: 100%;
+      background: #1e1e1e; font-family: 'Segoe UI', sans-serif;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .container {
+      width: 320px; padding: 20px; border-radius: 10px;
+      background-color: #2a2a2a; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    h2 {
+      margin-top: 0; font-size: 20px; color: #00B894; text-align: center;
+    }
+    label {
+      display: block; margin-top: 15px; font-size: 13px; color: #ccc;
+    }
+    select, input[type="number"] {
+      width: 100%; padding: 10px; margin-top: 5px;
+      border: 1px solid #444; border-radius: 6px;
+      background-color: #2c2c2c; color: #f1f1f1;
+      font-size: 14px; box-sizing: border-box;
+    }
+    .time-fields {
+      display: flex; justify-content: space-between; gap: 5px;
+    }
+    .time-fields input {
+      flex: 1; text-align: center;
+    }
+    .radio-group {
+      margin-top: 10px; color: #ccc;
+    }
+    .radio-group input[type="radio"] {
+      margin-right: 6px; accent-color: #00B894;
+    }
+    button {
+      width: 100%; margin-top: 20px; padding: 12px; font-size: 15px;
+      border: none; background-color: #00B894; color: white;
+      border-radius: 6px; cursor: pointer; transition: background 0.2s;
+    }
+    button:hover { background-color: #01906E; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>예매 예약 설정</h2>
+
+    <label for="team">홈팀 선택</label>
+    <select id="team">
+      <option value="">-- 홈팀을 선택하세요 --</option>
+      <option value="lg">엘지트윈스</option>
+      <option value="hanwha">한화이글스</option>
+    </select>
+
+    <label for="game">경기 선택</label>
+    <select id="game">
+      <option value="">-- 경기 정보를 선택하세요 --</option>
+    </select>
+
+    <label for="hour">접속 시간 (hh:mm:ss)</label>
+    <div class="time-fields">
+      <input type="number" id="hour" placeholder="hh" min="0" max="23" />
+      <input type="number" id="minute" placeholder="mm" min="0" max="59" />
+      <input type="number" id="second" placeholder="ss" min="0" max="59" />
+    </div>
+
+    <button id="start">예약 시작</button>
+    <script src="games.js"></script>
+    <script src="popup.js"></script>
+  </div>
+</body>
+</html>
