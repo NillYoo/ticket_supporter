@@ -1,0 +1,16 @@
+name: Purge jsDelivr cache
+
+on:
+  push:
+    paths:
+      - "games.json"
+    branches:
+      - main
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Purge games.json cache from jsDelivr
+        run: |
+          curl -X GET "https://purge.jsdelivr.net/gh/NillYoo/ticket_supporter/games.json"
