@@ -12,11 +12,12 @@ function renderInitialUI(gameData) {
     <select id="game">
       <option value="">-- 경기 정보를 선택하세요 --</option>
     </select>
-    <label for="hour">접속 시간 (hh:mm:ss)</label>
+    <label for="hour">접속 시간 (hh:mm:ss.ms)</label>
     <div class="time-fields">
       <input type="number" id="hour" placeholder="hh" min="0" max="23" />
       <input type="number" id="minute" placeholder="mm" min="0" max="59" />
       <input type="number" id="second" placeholder="ss" min="0" max="59" />
+      <input type="number" id="millisecond" placeholder="ms" min="0" max="999" />
     </div>
     <button id="start">입력정보로 예약적용</button>
   `;
@@ -42,7 +43,8 @@ function renderInitialUI(gameData) {
     const h = document.getElementById("hour").value.padStart(2, '0');
     const m = document.getElementById("minute").value.padStart(2, '0');
     const s = document.getElementById("second").value.padStart(2, '0');
-    const timeStr = `${h}:${m}:${s}`;
+    const ms = document.getElementById("millisecond").value.padStart(2, '0');
+    const timeStr = `${h}:${m}:${s}.${ms}`;
 
     if (!url || !name || !team || !h || !m || !s) {
       alert("모든 입력 값을 채워주세요.");
@@ -51,7 +53,7 @@ function renderInitialUI(gameData) {
 
     const [hour, minute, second] = [parseInt(h), parseInt(m), parseInt(s)];
     const now = new Date();
-    const target = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hour, minute, second);
+    const target = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hour, minute, second, parseInt(ms));
     const delay = target.getTime() - now.getTime();
 
     if (delay <= 0) {
@@ -70,6 +72,19 @@ function renderInitialUI(gameData) {
 
     renderCompletedUI(team, name, timeStr);
   });
+  
+  const limitLength = (el, max) => {
+  el.addEventListener("input", () => {
+    if (el.value.length > max) {
+      el.value = el.value.slice(0, max);
+    }
+  });
+};
+
+limitLength(document.getElementById("hour"), 2);
+limitLength(document.getElementById("minute"), 2);
+limitLength(document.getElementById("second"), 2);
+limitLength(document.getElementById("millisecond"), 2);
 }
 
 function renderCompletedUI(team, name, time) {
@@ -83,8 +98,8 @@ function renderCompletedUI(team, name, time) {
       <p id="countdown" style="color: #00B894; font-weight: bold; font-size: 18px;">남은 시간 계산 중...</p>
     </div>
     <div style="margin-top: 12px; font-size: 13px; color: #ccc; text-align: center;">
-      예약 시간 <strong>5~3분전</strong> 반드시 로그인해주세요.<br />
-      LG: <strong>공식 홈페이지</strong> / 한화: <strong>티켓링크</strong>
+      예약시간 5~3분전 미리 로그인해주세요.</br>
+      엘지: 공식홈페이지 / 한화: 티켓링크
     </div>
     <div style="display: flex; gap: 10px; margin-top: 20px;">
       <button id="cancelBtn" style="background-color: #e17055; color: white; flex: 1; padding: 10px; border: none; border-radius: 6px; cursor: pointer;">예약 취소</button>
@@ -99,9 +114,10 @@ function renderCompletedUI(team, name, time) {
     });
   });
 
-  const [hh, mm, ss] = time.split(":").map(Number);
+  const [hh, mm, ss_ms] = time.split(":");
+  const [ss, ms] = ss_ms.split(".");
   const target = new Date();
-  target.setHours(hh, mm, ss, 0);
+  target.setHours(parseInt(hh), parseInt(mm), parseInt(ss), parseInt(ms));
   updateCountdown(target);
 }
 
@@ -111,18 +127,19 @@ function updateCountdown(targetTime) {
     const now = new Date();
     const diff = targetTime - now;
     if (diff <= 0) {
-      countdownEl.textContent = "남은 시간: 00:00:00";
+      countdownEl.textContent = "남은 시간: 00:00:00.000";
       clearInterval(interval);
       return;
     }
     const h = String(Math.floor(diff / 3600000)).padStart(2, "0");
     const m = String(Math.floor((diff % 3600000) / 60000)).padStart(2, "0");
     const s = String(Math.floor((diff % 60000) / 1000)).padStart(2, "0");
-    countdownEl.textContent = `남은 시간: ${h}:${m}:${s}`;
-  }, 1000);
+    const ms = String(Math.floor((diff % 1000) / 10)).padStart(2, "0");
+    countdownEl.textContent = `남은 시간: ${h}:${m}:${s}.${ms}`;
+  }, 10);  // 10ms 단위 업데이트
 }
 
-// 외부 JSON에서 경기 정보를 불러옵니다
+
 fetch("https://cdn.jsdelivr.net/gh/NillYoo/ticket_supporter/games.json?nocache=" + Date.now())
   .then(res => res.json())
   .then(gameData => {
@@ -138,4 +155,3 @@ fetch("https://cdn.jsdelivr.net/gh/NillYoo/ticket_supporter/games.json?nocache="
     console.error("게임 정보를 불러올 수 없습니다.", err);
     alert("게임 정보를 불러오는 데 실패했습니다.");
   });
-

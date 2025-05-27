@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>Ticket Supporter</title>
+  <meta charset="UTF-8" />
+  <title>티켓 예약 매크로</title>
   <style>
     html, body {
       margin: 0; padding: 0; width: 100%; height: 100%;
@@ -31,12 +31,6 @@
     .time-fields input {
       flex: 1; text-align: center;
     }
-    .radio-group {
-      margin-top: 10px; color: #ccc;
-    }
-    .radio-group input[type="radio"] {
-      margin-right: 6px; accent-color: #00B894;
-    }
     button {
       width: 100%; margin-top: 20px; padding: 12px; font-size: 15px;
       border: none; background-color: #00B894; color: white;
@@ -61,14 +55,15 @@
       <option value="">-- 경기 정보를 선택하세요 --</option>
     </select>
 
-    <label for="hour">접속 시간 (hh:mm:ss)</label>
+    <label for="hour">접속 시간 (hh:mm:ss.ms)</label>
     <div class="time-fields">
-      <input type="number" id="hour" placeholder="hh" min="0" max="23" />
-      <input type="number" id="minute" placeholder="mm" min="0" max="59" />
-      <input type="number" id="second" placeholder="ss" min="0" max="59" />
+      <input type="number" id="hour" placeholder="hh" min="0" max="23" maxlength="2" />
+      <input type="number" id="minute" placeholder="mm" min="0" max="59" maxlength="2" />
+      <input type="number" id="second" placeholder="ss" min="0" max="59" maxlength="2" />
+      <input type="number" id="millisecond" placeholder="ms" min="0" max="99" maxlength="2" />
     </div>
 
-    <button id="start">예약 시작</button>
+    <button id="start">입력정보로 예약적용</button>
     <script src="popup.js"></script>
   </div>
 </body>
