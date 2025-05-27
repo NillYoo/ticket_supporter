@@ -83,8 +83,8 @@ function renderCompletedUI(team, name, time) {
       <p id="countdown" style="color: #00B894; font-weight: bold; font-size: 18px;">남은 시간 계산 중...</p>
     </div>
     <div style="margin-top: 12px; font-size: 13px; color: #ccc; text-align: center;">
-      예매 시간 전에 미리 로그인해두는 것을 권장합니다.<br />
-      LG: 공식 홈페이지 로그인 / 한화: 티켓링크 로그인
+      예약 시간 전 <strong>5~3분전</strong> 반드시 로그인해주세요.<br />
+      LG: <strong>공식 홈페이지</strong> / 한화: <strong>티켓링크</strong>
     </div>
     <div style="display: flex; gap: 10px; margin-top: 20px;">
       <button id="cancelBtn" style="background-color: #e17055; color: white; flex: 1; padding: 10px; border: none; border-radius: 6px; cursor: pointer;">예약 취소</button>
