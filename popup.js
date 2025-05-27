@@ -83,7 +83,7 @@ function renderCompletedUI(team, name, time) {
       <p id="countdown" style="color: #00B894; font-weight: bold; font-size: 18px;">남은 시간 계산 중...</p>
     </div>
     <div style="margin-top: 12px; font-size: 13px; color: #ccc; text-align: center;">
-      예약 시간 전 <strong>5~3분전</strong> 반드시 로그인해주세요.<br />
+      예약 시간 <strong>5~3분전</strong> 반드시 로그인해주세요.<br />
       LG: <strong>공식 홈페이지</strong> / 한화: <strong>티켓링크</strong>
     </div>
     <div style="display: flex; gap: 10px; margin-top: 20px;">
