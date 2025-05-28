@@ -20,9 +20,9 @@
   ],
   hanwha: [
     {
-      name: "vs 엘지트윈스 6월 1일 (토)",
-      url: "https://facility.ticketlink.co.kr/reserve/product/54833?scheduleId=204628209"
-    }
+      "name": "vs KT 6월 03일 (화)",
+      "url": "https://ticketlink.co.kr/reserve/product/55319?scheduleId=1937103024"
+    },
   ]
 };
 ```
